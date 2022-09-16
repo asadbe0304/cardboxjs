@@ -1,4 +1,3 @@
-
 const car = [{
         title: "SPARK",
         price: 1400,
@@ -6,6 +5,7 @@ const car = [{
         position: "4",
         race: 40000,
         price: 8000,
+        img: "https://freepngimg.com/thumb/car/2-2-car-transparent-thumb.png",
     },
     {
         title: "Toyota",
@@ -14,6 +14,7 @@ const car = [{
         position: "4",
         race: 10000,
         price: 18000,
+        img: "https://freepngimg.com/thumb/car/1-2-car-png-picture-thumb.png",
     },
     {
         title: "Hyundai",
@@ -22,6 +23,7 @@ const car = [{
         position: "4",
         race: 48500,
         price: 15000,
+        img: "https://freepngimg.com/thumb/car/4-2-car-png-hd-thumb.png",
     },
 ];
 
@@ -31,6 +33,10 @@ for (let i = 0; i < car.length; i++) {
     // console.log(product);
     const elProduct = document.createElement("li");
     elProduct.classList.add("list")
+    const elProductImg = document.createElement("img");
+    elProductImg.src = product.img;
+    elProductImg.width = 250;
+    elProductImg.classList.add("pro__img")
     const elProductTitle = document.createElement("h3");
     elProductTitle.textContent = product.title;
     //color rangi
@@ -48,7 +54,8 @@ for (let i = 0; i < car.length; i++) {
     const elProductsPrice = document.createElement("p");
     elProductsPrice.textContent = `$ ${product.price}`;
 
-    elProduct.append(elProductTitle, elProductSize, elProductsPos, elProductsRace, elProductsPrice);
+    elProduct.append(elProductImg, elProductTitle, elProductSize, elProductsPos, elProductsRace, elProductsPrice);
 
     elProducts.append(elProduct)
+
 }
